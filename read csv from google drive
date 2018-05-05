@@ -1,0 +1,20 @@
+     !pip install -U -q PyDrive ## you will have install for every colab session
+
+     from pydrive.auth import GoogleAuth
+     from pydrive.drive import GoogleDrive
+     from google.colab import auth
+     from oauth2client.client import GoogleCredentials
+
+     # 1. Authenticate and create the PyDrive client.
+     auth.authenticate_user()
+     gauth = GoogleAuth()
+     gauth.credentials = GoogleCredentials.get_application_default()
+     drive = GoogleDrive(gauth)
+   import pip 
+import csv
+csv_import = drive.CreateFile({'id':'1PkHXXcMcUm1qjZEueTN5AQRSWn9L5A_Q'})
+csv_import.GetContentFile('train.csv')
+
+import pandas as pd
+df = pd.read_csv('train.csv')
+
