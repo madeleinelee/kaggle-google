@@ -1,0 +1,58 @@
++# from keras.applications.inception_v3 import InceptionV3
++# 使用 flatten 與 flat 把二維 array 攤平
++
++#  train
++
++# sample_submission
++
++#  /Users/mxxxxxxe/Downloads
++
++# df = pd.read_csv("/Users/mxxxxxxe/Downloads/sample_submission.csv”)
++
++model = applications.VGG16(weights='imagenet')
++img = image.load_img('cat.jpeg', target_size=(224, 224))
++x = image.img_to_array(img)
++x = np.expand_dims(x, axis=0)
++x = preprocess_input(x)
++preds = model.predict(x)
++forresultsindecode_predictions(preds):
++forresultinresults:
++print('Probability %0.2f%% => [%s]'% (100*result[2], result[1]))
++# # # # # # # 
++# Simple CNN model for the kaggle google Dataset
++import numpy
++from keras.models import Sequential
++from keras.layers import Dense, Dropout, Activation
++from keras.optimizers import SGD
++
++#coding=utf-8
++import pandas as pd 
++import numpy as np 
++
++import matplotlib.pyplot as plt
++import seaborn as sns
++from IPython.display import Image
++from IPython.core.display import HTML 
++from PIL import Image
++from PIL.ExifTags import TAGS, GPSTAGS
++from io import BytesIO
++
++import csv
++import sys
++import requests
++import skimage.io
++import os
++import glob
++import pickle
++import time
++
++from IPython.display import display, Image, HTML
++from keras.applications import VGG16
++from keras.applications.vgg16 import preprocess_input
++from keras.preprocessing import image as kimage
++import numpy as np
++import pandas as pd
++import scipy.sparse as sp
++import skimage.io
++
++sys.path.append('../')
